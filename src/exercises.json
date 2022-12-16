@@ -1,0 +1,9 @@
+[
+  { "slug": "squat", "title": "Squat", "description": "Put the bar on your back, sit down, stand up"},
+  { "slug": "overhead-press", "title": "Overhead press", "description": "Put the bar on your shoulders, press it up" },
+  { "slug": "bench-press", "title": "Bench press", "description": "Put the bar on your chest, press it up" },
+  { "slug": "deadlift", "title": "Deadlift", "description": "Put the bar on the floor, pick it up" },
+  { "slug": "pull-up", "title": "Pull-up", "description": "Grab the bar, pull yourself up"},
+  { "slug": "row", "title": "Row", "description": "Grab the bar, pull it to your chest" },
+  { "slug": "push-up", "title": "Push-up", "description": "Put your hands on the floor, push yourself up" }
+]
