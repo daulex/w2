@@ -1,21 +1,21 @@
 <script>
   import exercisesSource from "../../exercises.json";
-
+  export let data;
+  
   let newExercise = '';
   let newExerciseDescription = '';
-  let exercises = exercisesSource;
+  let exercises = data.exercises;
 
-  const addExercise = () => {
-    if(!newExercise) return;
-    exercises = [...exercises, { slug: newExercise.toLowerCase()
-                      .trim()
-                      .replace(/[^\w\s-]/g, '')
-                      .replace(/[\s_-]+/g, '-')
-                      .replace(/^-+|-+$/g, ''), title: newExercise }];
-    newExercise = '';
-    newExerciseDescription = '';
-  }
-
+  // const addExercise = () => {
+  //   if(!newExercise) return;
+  //   exercises = [...exercises, { slug: newExercise.toLowerCase()
+  //                     .trim()
+  //                     .replace(/[^\w\s-]/g, '')
+  //                     .replace(/[\s_-]+/g, '-')
+  //                     .replace(/^-+|-+$/g, ''), title: newExercise }];
+  //   newExercise = '';
+  //   newExerciseDescription = '';
+  // }
 </script>
 <main class="container">
   <h1>Exercise list</h1>
@@ -24,18 +24,20 @@
       <li><a href="/exercises/{exercise.slug}">{exercise.title}</a></li>
     {/each}
   </ul>
+
   <article>
-    <form>
+    <form method="POST">
         <h3>Add exercise</h3>
         <input 
           type="text" 
-          bind:value={newExercise}
           placeholder="New exercise name" 
-          class="border-gray-300 border-solid border rounded-md p-2 text-sm" 
+          name="exercise_name"
         />
-        <textarea bind:value={newExerciseDescription} placeholder="Exercise description"></textarea>
-        <button type="submit" on:click={addExercise}>Add Exercise</button>
-    
+        <textarea 
+          placeholder="Exercise description"
+          name="exercise_description"
+        ></textarea>
+        <button type="submit">Add Exercise</button>
     </form>
   </article>
 </main>
